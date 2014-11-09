@@ -8,6 +8,7 @@ gem 'pg'
 
 # 前端相关
 gem 'sass-rails', '~> 4.0.3'
+gem 'bootstrap-sass'
 gem 'slim-rails', '~> 2.1.5'
 gem 'ckeditor'
 gem 'uglifier', '>= 1.3.0'
