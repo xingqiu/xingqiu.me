@@ -5,16 +5,16 @@ class Admin::ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
-    respond_with(@articles)
+    respond_with([:admin, @article])
   end
 
   def show
-    respond_with(@article)
+    respond_with([:admin, @article])
   end
 
   def new
     @article = Article.new
-    respond_with(@article)
+    respond_with([:admin, @article])
   end
 
   def edit
@@ -23,17 +23,17 @@ class Admin::ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @article.save
-    respond_with(@article)
+    respond_with([:admin, @article])
   end
 
   def update
     @article.update(article_params)
-    respond_with(@article)
+    respond_with([:admin, @article])
   end
 
   def destroy
     @article.destroy
-    respond_with(@article)
+    respond_with([:admin, @article])
   end
 
   private
@@ -42,6 +42,6 @@ class Admin::ArticlesController < ApplicationController
     end
 
     def article_params
-      params[:article]
+      params.require(:article).permit(:title, :body, :author_id)
     end
 end
