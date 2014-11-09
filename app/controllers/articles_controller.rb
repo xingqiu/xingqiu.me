@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_filter :login_required, only: [:index]
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
