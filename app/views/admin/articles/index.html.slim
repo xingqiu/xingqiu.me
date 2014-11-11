@@ -1,6 +1,6 @@
 h1 Listing articles
 
-table
+table.table.table-striped.table-bordered
   thead
     tr
       th Title
@@ -16,10 +16,10 @@ table
         td = article.title
         td = article.body
         td = article.author
-        td = link_to 'Show', admin_article_path(article)
-        td = link_to 'Edit', edit_admin_article_path(article)
-        td = link_to 'Destroy', article, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Show', admin_article_path(article), class: "btn btn-primary btn-xs"
+        td = link_to 'Edit', edit_admin_article_path(article), class: "btn btn-primary btn-xs"
+        td = link_to 'Destroy', [:admin, article], data: {:confirm => 'Are you sure?'}, :method => :delete, class: "btn btn-primary btn-xs"
 
 br
 
-= link_to 'New Article', new_article_path
+= link_to 'New Article', new_admin_article_path, class: "btn btn-primary"

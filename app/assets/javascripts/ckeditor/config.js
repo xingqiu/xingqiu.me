@@ -6,7 +6,8 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 CKEDITOR.editorConfig = function( config )
 {
   // Define changes to default configuration here. For example:
-  // config.language = 'fr';
+  config.language = 'zh-cn';
+  config.defaultLanguage = 'zh-cn';
   // config.uiColor = '#AADC6E';
 
   /* Filebrowser routes */
@@ -114,4 +115,7 @@ CKEDITOR.editorConfig = function( config )
     { name: 'about', items: [ 'About' ] }
   ];
 
+  config.removePlugins = "image, forms"
+  config.extraPlugins = "image2"
+  config.image2_alignClasses = [ 'align-left', 'align-center', 'align-right' ];
 };
