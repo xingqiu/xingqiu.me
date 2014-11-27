@@ -87,12 +87,14 @@ body
       @include respond-to(phones)
         margin: 0
   .align-left
-  .align-right
-    @include respond-to(phones)
-      float: auto
-      width: 100%
-  .align-left
     float: left
   .align-right
     float: right
     max-width: 60%
+  .align-left
+  .align-right
+    @include respond-to(phones)
+      float: none
+      width: 100%
+      max-width: 100%
+      margin: 0
