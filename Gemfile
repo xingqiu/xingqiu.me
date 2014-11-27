@@ -13,6 +13,7 @@ gem 'pg'
 
 # 前端相关
 gem 'sass-rails', '~> 4.0.3'
+gem 'compass-rails'
 gem 'bootstrap-sass'
 gem 'slim-rails', '~> 2.1.5'
 gem 'ckeditor'

@@ -11,5 +11,6 @@
  * file per style scope.
  *
  *= require "lib/normalize"
+ *= require "mod/common"
  *= require_self
  */
