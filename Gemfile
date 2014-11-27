@@ -23,7 +23,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 # 上传文件
-gem 'paperclip'
+gem 'carrierwave'
+gem 'mini_magick'
 
 # 账户相关
 gem 'devise'
