@@ -1,20 +1,11 @@
-table
-  thead
-    tr
-      th Title
-      th Body
-      th Author
-      th
-      th
-      th
-
-  tbody
-    - @articles.each do |article|
-      tr
-        td = article.title
-        td = article.body
-        td = article.author
-        td = link_to 'Show', article
+- @articles.each do |article|
+  ul
+    li.item
+      .hd
+        = image_tag(article.cover_url(:title_cover))
+      .bd
+        h2
+          = link_to article.title, article
 
 br
 
