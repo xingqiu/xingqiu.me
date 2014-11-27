@@ -2,7 +2,7 @@ h1 Editing article
 
 == render 'form'
 
-= link_to 'Show', admin_article_path(@article), class: "article"
-'|
-= link_to 'Back', admin_articles_path
+.actions
+  = link_to 'Show', admin_article_path(@article), class: "article btn btn-primary"
+  = link_to 'Back', admin_articles_path, class: "article btn btn-primary"
 

@@ -11,7 +11,7 @@
     = f.text_field :title, class: "form-control"
   .form-group
     = f.label :body
-    = f.cktext_area :body, class: "form-control"
+    = f.cktext_area :body, class: "form-control", :ckeditor => { :height => 400 }
   .form-group
     = f.label :author
     = f.text_field :author, class: "form-control"

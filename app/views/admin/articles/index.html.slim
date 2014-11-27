@@ -14,7 +14,7 @@ table.table.table-striped.table-bordered
     - @articles.each do |article|
       tr
         td = article.title
-        td = article.body
+        td = article.body[0..40]
         td = article.author
         td = link_to 'Show', admin_article_path(article), class: "btn btn-primary btn-xs"
         td = link_to 'Edit', edit_admin_article_path(article), class: "btn btn-primary btn-xs"
