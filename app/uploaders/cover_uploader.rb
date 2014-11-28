@@ -37,7 +37,7 @@ class CoverUploader < CarrierWave::Uploader::Base
   end
 
   version :title_cover do
-    process :resize_to_fill => [600, 337]
+    process :resize_to_fill => [600, 237]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
