@@ -32,7 +32,7 @@ namespace :deploy do
     sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
     sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
     run "mkdir -p #{shared_path}/config"
-    run "mkdir -p #{shared_path}/public/ckeditor_assets"
+    run "mkdir -p #{shared_path}/public/uploads"
     put File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
     put File.read("config/secrets.example.yml"), "#{shared_path}/config/secrets.yml"
     puts "Now edit the config files in #{shared_path}."
@@ -42,7 +42,7 @@ namespace :deploy do
   task :symlink_config, roles: :app do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
     run "ln -nfs #{shared_path}/config/secrets.yml #{release_path}/config/secrets.yml"
-    run "ln -nfs #{shared_path}/public/ckeditor_assets #{release_path}/public/ckeditor_assets"
+    run "ln -nfs #{shared_path}/public/uploads #{release_path}/public/uploads"
   end
   after "deploy:finalize_update", "deploy:symlink_config"
 
