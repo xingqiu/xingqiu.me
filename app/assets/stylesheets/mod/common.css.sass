@@ -1,2 +1,36 @@
+@import "compass"
+
 a
   text-decoration: none
+
+.navigation
+  background: rgba(255, 255, 255, 0.8)
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+  overflow: hidden
+  .navigation-menu
+    padding: 0
+    width: 800px
+    margin: 0 auto
+    .item
+      @include inline-block()
+      &.actived a
+        border-bottom: 1px solid #cb6898
+      a
+        display: block
+        padding: 21px 10px 19px
+        margin: 0 8px
+        color: rgba(0, 0, 0, 0.5)
+        &:hover
+          color: #cb6898
+    .item .logo-wrapper
+      &:hover
+        opacity: 1
+      opacity: .8
+      position: relative
+      width: 70px
+      height: 57px
+      padding: 0
+      margin: 0
+      background: image-url("logo.jpg") no-repeat
+      background-position: 0px 10px
+      background-size: 50px 50px

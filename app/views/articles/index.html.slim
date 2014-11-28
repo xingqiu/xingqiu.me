@@ -1,12 +1,10 @@
-- @articles.each do |article|
-  ul
-    li.item
-      .hd
-        = image_tag(article.cover_url(:title_cover))
-      .bd
-        h2
-          = link_to article.title, article
-
-br
-
-= link_to 'Admin', '/admin/articles'
+.page-artilces-index
+  .artilce-list
+    - @articles.each do |article|
+      ul
+        li.item
+          .hd
+            = link_to image_tag(article.cover_url(:title_cover)), article
+          .bd
+            .title
+              = link_to article.title, article
