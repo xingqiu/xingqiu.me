@@ -9,6 +9,10 @@ class Admin::ArticlesController < ApplicationController
     respond_with([:admin, @article])
   end
 
+  def category
+    @articles = Article.all
+  end
+
   def show
     respond_with([:admin, @article])
   end

@@ -9,6 +9,12 @@ class ArticlesController < ApplicationController
     respond_with(@articles)
   end
 
+  def category
+    @articles = Article.all
+    @category = Category.find(params[:id])
+    render action: 'index'
+  end
+
   def show
     respond_with(@article)
   end

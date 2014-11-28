@@ -2,9 +2,12 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   namespace :admin do
     resources :articles
+    resources :categories
   end
 
   resources :articles
+
+  get "articles/category/:id" => "articles#category", as: 'category_articles'
 
   devise_for :authors
   # The priority is based upon order of creation: first created -> highest priority.

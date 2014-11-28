@@ -1,0 +1,21 @@
+h1 Listing categories
+
+table.table.table-striped.table-bordered
+  thead
+    tr
+      th 标题
+      th 显示
+      th 编辑
+      th 撤销
+
+  tbody
+    - @categories.each do |category|
+      tr
+        td = category.name
+        td = link_to 'Show', admin_category_path(category)
+        td = link_to 'Edit', edit_admin_category_path(category)
+        td = link_to 'Destroy', [:admin, category], data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Category', new_admin_category_path, class: "btn btn-primary"
