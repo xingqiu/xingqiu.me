@@ -10,8 +10,8 @@ class ArticlesController < ApplicationController
   end
 
   def category
-    @articles = Article.all
     @category = Category.find(params[:id])
+    @articles = @category.articles
     render action: 'index'
   end
 
@@ -49,6 +49,6 @@ class ArticlesController < ApplicationController
     end
 
     def article_params
-      params.require(:article).permit(:title, :body, :author_id)
+      params.require(:article).permit(:title, :body, :author_id, :category_id)
     end
 end

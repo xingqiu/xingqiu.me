@@ -13,8 +13,13 @@
     = f.label :body
     = f.cktext_area :body, class: "form-control", :ckeditor => { :height => 400 }
   .form-group
-    = f.label :author
-    = f.text_field :author, class: "form-control"
+    = f.label "作者"
+    = collection_select :article, :author_id, Author.all,
+      :id, :email, {}, { :class => "form-control"}
+  .form-group
+    = f.label "分类"
+    = collection_select :article, :category_id, Category.all,
+      :id, :name, {}, { class: "form-control"}
   .form-group
     = f.label 'Cover'
     = f.file_field :cover
