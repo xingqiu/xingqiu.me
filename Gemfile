@@ -4,6 +4,7 @@ source 'https://ruby.taobao.org/'
 gem 'capistrano'
 gem 'unicorn'
 gem 'rvm-capistrano'
+gem 'dotenv-rails', :groups => [:development, :test, :production]
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

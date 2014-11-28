@@ -35,6 +35,7 @@ namespace :deploy do
     run "mkdir -p #{shared_path}/public/uploads"
     put File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
     put File.read("config/secrets.example.yml"), "#{shared_path}/config/secrets.yml"
+    put File.read(".env"), "#{shared_path}/.env"
     puts "Now edit the config files in #{shared_path}."
   end
   after "deploy:setup", "deploy:setup_config"
@@ -43,6 +44,7 @@ namespace :deploy do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
     run "ln -nfs #{shared_path}/config/secrets.yml #{release_path}/config/secrets.yml"
     run "ln -nfs #{shared_path}/public/uploads #{release_path}/public/uploads"
+    run "ln -nfs #{shared_path}/.env #{release_path}/.env"
   end
   after "deploy:finalize_update", "deploy:symlink_config"
 
