@@ -1,4 +1,9 @@
 @import "compass"
+@import "mod/mixins"
+
+body
+  @include respond-to(phones)
+    margin: 0 16px
 
 a
   text-decoration: none

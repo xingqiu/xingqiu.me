@@ -1,10 +1,4 @@
-@mixin respond-to($media)
-  @if $media == phones
-    @media only screen and (max-width: 40em)
-      @content
-body
-  @include respond-to(phones)
-    margin: 0 16px
+@import "mod/mixins"
 
 .content
   max-width: 1200px

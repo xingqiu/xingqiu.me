@@ -15,15 +15,19 @@
  *= require_self
  */
 
+@import "mod/mixins"
+
 .page-artilces-index
   .main
     width: 800px
+    max-width: 100%
     margin: 0 auto
   .category-nav
     background: #f2f2f2
     border-radius: 5px
     margin: 35px 0
     width: 600px
+    max-width: 100%
     box-sizing: border-box
     padding: 7px
     line-height: 28px
@@ -46,6 +50,7 @@
     height: 28px
   .artilce-list
     width: 600px
+    max-width: 100%
     ul
       list-style: none
       padding: 0
@@ -55,6 +60,8 @@
     .item
       border: 1px solid #ddd
       margin-bottom: 20px
+    img
+      max-width: 100%
     .title
       font-size: 22px
       padding: 15px
