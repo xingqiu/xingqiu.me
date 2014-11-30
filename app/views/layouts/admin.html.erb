@@ -2,13 +2,26 @@
 <html>
 <head>
   <title>素食星球 - 后台</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'admin/index', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= yield :more_head %>
 </head>
 <body>
+  <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
+    <div class="container">
+      <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+        <ul class="nav navbar-nav">
+          <li class="<%= is_active?('admin/articles')%>">
+            <%= link_to "管理文章", admin_articles_path%>
+          </li>
+          <li class="<%= is_active?('admin/categories')%>">
+            <%= link_to "管理标签", admin_categories_path%>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
   <div class="main">
     <%= yield %>
   </div>
