@@ -5,6 +5,7 @@ gem 'capistrano'
 gem 'unicorn'
 gem 'rvm-capistrano'
 gem 'dotenv-rails', :groups => [:development, :test, :production]
+gem 'kaminari'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -40,3 +40,22 @@ a
       background: image-url("logo.jpg") no-repeat
       background-position: 0px 10px
       background-size: 50px 50px
+
+.pagination
+  margin: 10px 0
+  span
+    @include inline-block()
+    border: 1px solid #ddd
+    height: 36px
+    line-height: 36px
+  .current
+    padding: 0 14px
+    color: #999
+  a
+    @include inline-block()
+    height: 36px
+    padding: 0 14px
+    vertical-align: middle
+    color: #666
+    &:hover
+      color: #cb6898
