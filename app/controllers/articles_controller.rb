@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   respond_to :html
 
   def index
-    @articles = Article.all.page(params[:page]).per(10)
+    @articles = Article.page(params[:page]).per(10)
     respond_with(@articles)
   end
 
