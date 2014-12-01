@@ -1,7 +1,7 @@
 require "bundler/capistrano"
 require "rvm/capistrano"
 
-server "106.187.45.137", :web, :app, :db, primary: true
+server "121.201.7.51", :web, :app, :db, primary: true
 
 set :application, "xingqiu.me"
 set :user, "xingqiu"
