@@ -16,3 +16,6 @@
               .title
                 = link_to article.title, article
       = paginate @articles
+
+- content_for :title do
+  = '素食星球' + (@category ? ' - ' + @category.name.to_s : '')

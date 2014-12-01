@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>素食星球</title>
+  <title><%= content_for?(:title) ? content_for(:title) : '素食星球' %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= favicon_link_tag 'favicon/favicon.ico' %>
   <%= csrf_meta_tags %>
   <%= yield :more_head %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="素食星球, 素食" />
 </head>
   <%= render "mod/header" %>
 <body>
