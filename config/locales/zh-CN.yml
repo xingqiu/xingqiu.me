@@ -12,4 +12,5 @@
         author:
           attributes:
             current_password:
-              invalid: "错误"
+              invalid: "请输入正确 current_password"
+              blank: "请输入 current_password"

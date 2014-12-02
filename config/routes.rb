@@ -14,7 +14,9 @@ Rails.application.routes.draw do
 
   get "articles/category/:id" => "articles#category", as: 'category_articles'
 
-  devise_for :authors
+  devise_for :authors, controllers: {
+    registrations: "authors/registrations"
+  }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
