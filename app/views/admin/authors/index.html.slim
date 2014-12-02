@@ -1,0 +1,18 @@
+h1 Listing authors
+
+table.table.table-striped.table-bordered
+  thead
+    tr
+      th 邮箱
+      th 显示
+      th 编辑
+      th 撤销
+
+  tbody
+    - @authors.each do |author|
+      tr
+        td = author.email
+        td = link_to 'Show', admin_author_path(author), class: "btn btn-primary btn-xs"
+        td = link_to 'Edit', edit_admin_author_path(author), class: "btn btn-primary btn-xs"
+        td = link_to 'Destroy', [:admin, author], data: {:confirm => 'Are you sure?'},
+          :method => :delete, class: "btn btn-primary btn-xs"

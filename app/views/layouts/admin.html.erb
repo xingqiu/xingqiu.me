@@ -18,6 +18,9 @@
           <li class="<%= is_active?('admin/categories')%>">
             <%= link_to "管理标签", admin_categories_path%>
           </li>
+          <li class="<%= is_active?('admin/authors')%>">
+            <%= link_to "管理作者", admin_authors_path%>
+          </li>
         </ul>
         <% if author_signed_in? %>
           <ul class="nav navbar-nav navbar-right">
