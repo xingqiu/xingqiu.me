@@ -2,7 +2,7 @@ h1 Editing author
 
 == render 'form'
 
-= link_to 'Show', admin_author_path(@author)
-'|
-= link_to 'Back', admin_authors_path
-
+.actions
+  = link_to 'Show', admin_author_path(@author), class: "author btn btn-default"
+  | &nbsp;
+  = link_to 'Back', admin_authors_path, class: "author btn btn-default"

@@ -1,8 +1,13 @@
-p#notice = notice
+
+- if notice
+  p#notice.bg-info = notice
 
 p
   strong Email:
   = @author.email
+p
+  strong 是否通过验证:
+  = @author.verified
 
 = link_to 'Edit', edit_admin_author_path(@author)
 '|
