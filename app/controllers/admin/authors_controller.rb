@@ -1,4 +1,5 @@
 class Admin::AuthorsController < ApplicationController
+  before_filter :login_required
   before_action :set_author, only: [:show, :edit, :update, :destroy]
   layout "admin"
 

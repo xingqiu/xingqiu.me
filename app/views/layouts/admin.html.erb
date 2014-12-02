@@ -25,6 +25,9 @@
         <% if author_signed_in? %>
           <ul class="nav navbar-nav navbar-right">
             <li>
+              <%= link_to current_author.email, edit_author_registration_path %>
+            </li>
+            <li>
               <%= link_to "注销", destroy_author_session_path, method: "delete" %>
             </li>
           </ul>

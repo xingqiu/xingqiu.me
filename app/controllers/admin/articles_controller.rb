@@ -1,5 +1,5 @@
 class Admin::ArticlesController < ApplicationController
-  before_filter :login_required, only: [:index]
+  before_filter :login_required
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   layout "admin"
 

@@ -5,8 +5,11 @@ class ApplicationController < ActionController::Base
   layout :layout_by_resource
 
   def login_required
-    if author_signed_in?
+    if author_signed_in? and current_author.verified?
       return true
+    end
+    if author_signed_in?
+      return redirect_to "/admin/account_require_verified"
     end
     redirect_to "/authors/sign_in"
     return false

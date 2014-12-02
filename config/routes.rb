@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  get 'admin/account_require_verified'
+
   mount Ckeditor::Engine => '/ckeditor'
   namespace :admin do
     root 'articles#index'
     resources :articles
     resources :categories
     resources :authors
+    get "account_require_verified" => "admin#account_require_verified"
   end
 
   resources :articles
