@@ -2,6 +2,7 @@
   h1
     = @article.title
   == @article.body
+  = render "mod/disqus"
 
 - content_for :more_head do
   = stylesheet_link_tag "articles", :media => "all", 'data-turbolinks-track' => true
