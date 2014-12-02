@@ -19,11 +19,13 @@
             <%= link_to "管理标签", admin_categories_path%>
           </li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <%= link_to "注销", destroy_author_session_path, method: "delete" %>
-          </li>
-        </ul>
+        <% if author_signed_in? %>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <%= link_to "注销", destroy_author_session_path, method: "delete" %>
+            </li>
+          </ul>
+        <% end %>
       </nav>
     </div>
   </header>
