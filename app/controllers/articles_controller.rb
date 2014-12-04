@@ -4,13 +4,14 @@ class ArticlesController < ApplicationController
   respond_to :html
 
   def index
-    @articles = Article.page(params[:page]).per(10)
+    @articles = Article.order(created_at: :desc).page(params[:page]).per(10)
     respond_with(@articles)
   end
 
   def category
     @category = Category.find(params[:id])
-    @articles = @category.articles.page(params[:page]).per(10)
+    @articles = @category.articles.order(created_at: :desc).
+      page(params[:page]).per(10)
     render action: 'index'
   end
 

@@ -6,12 +6,12 @@ class Admin::ArticlesController < ApplicationController
   respond_to :html
 
   def index
-    @articles = Article.all
+    @articles = Article.all.order(created_at: :desc)
     respond_with([:admin, @article])
   end
 
   def category
-    @articles = Article.all
+    @articles = Article.all.order(created_at: :desc)
   end
 
   def show
