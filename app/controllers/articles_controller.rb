@@ -15,6 +15,11 @@ class ArticlesController < ApplicationController
     render action: 'index'
   end
 
+  def feed
+    @articles = Article.order(created_at: :desc).limit(20)
+    render layout: false
+  end
+
   def show
     respond_with(@article)
   end

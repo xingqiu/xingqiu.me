@@ -10,7 +10,11 @@ Rails.application.routes.draw do
     get "account_require_verified" => "admin#account_require_verified"
   end
 
-  resources :articles
+  resources :articles do
+    collection do
+      get :feed, defaults: { format: 'xml' }
+    end
+  end
 
   get "articles/category/:id" => "articles#category", as: 'category_articles'
 

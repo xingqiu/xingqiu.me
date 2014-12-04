@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= favicon_link_tag 'favicon/favicon.ico' %>
+  <%= auto_discovery_link_tag :rss, feed_articles_path, ttile: '订阅最新文章' %>
   <%= csrf_meta_tags %>
   <%= yield :more_head %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
